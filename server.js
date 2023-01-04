@@ -12,11 +12,14 @@ const pokemons = [
     image: "/pikachu.webp"
   }
 ]
+// Before the other routes
+app.use(express.static("build"))
 
 app.get("/api/pokemons", (req, res) => {
   console.log("GET /api/pokemons")
   res.send({pokemons: pokemons})
 });
+
 
 app.post("/api/pokemons", (req, res) => {
   const data = req.body
@@ -25,6 +28,10 @@ app.post("/api/pokemons", (req, res) => {
   pokemons.push(data)
   res.send(data)
 })
+
+app.get('*', (req, res) => {
+  res.sendFile('build/index.html')});
+  
 
 const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`listening on port ${port}`))
