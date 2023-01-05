@@ -11,6 +11,14 @@ const pokemons = [
     level: 99,
     image: "/pikachu.webp"
   }
+,
+  {
+    id: 2,
+    name: "Monkey",
+    type: "water ⚡️",
+    level: 99,
+    image: "/pikachu.webp"
+  }
 ]
 // Before the other routes
 app.use(express.static("build"))
@@ -20,7 +28,6 @@ app.get("/api/pokemons", (req, res) => {
   res.send({pokemons: pokemons})
 });
 
-
 app.post("/api/pokemons", (req, res) => {
   const data = req.body
   console.log("POST /api/pokemons", data)
@@ -29,8 +36,9 @@ app.post("/api/pokemons", (req, res) => {
   res.send(data)
 })
 
+// After all other routes
 app.get('*', (req, res) => {
-  res.sendFile('week1-react/app_frontend/build/index.html')});
+  res.sendFile('build/index.html')})
 
 const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`listening on port ${port}`))
