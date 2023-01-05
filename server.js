@@ -30,8 +30,7 @@ app.post("/api/pokemons", (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile('build/index.html')});
-  
+  res.sendFile('week1-react/app_frontend/build/index.html')});
 
 const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`listening on port ${port}`))
