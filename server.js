@@ -14,10 +14,10 @@ const pokemons = [
 ,
   {
     id: 2,
-    name: "Monkey",
-    type: "water ⚡️",
-    level: 99,
-    image: "/pikachu.webp"
+    name: "Charizard",
+    type: "fire 🔥",
+    level: 20,
+    image: "/Charizard.webp"
   }
 ]
 // Before the other routes
