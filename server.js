@@ -30,7 +30,7 @@ app.get("/api/pokemons", (req, res) => {
 
 app.post("/api/pokemons", (req, res) => {
   const data = req.body
-  console.log("POST /api/pokemons", data)
+  // console.log("POST /api/pokemons", data)
   data.id = pokemons.length+1
   pokemons.push(data)
   res.send(data)
